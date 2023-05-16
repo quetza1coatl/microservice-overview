@@ -1,5 +1,6 @@
-package com.quetzalcoatl.microservices.dataproducer;
+package com.quetzalcoatl.microservices.dataproducer.kafka;
 
+import com.quetzalcoatl.microservices.dataproducer.BlackHoleData;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.UUIDSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,14 +30,12 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public ProducerFactory<UUID, BlackHoleData> blackHoleProducerFactory(Map<String, Object> producerConfigs){
-        return new DefaultKafkaProducerFactory<>(producerConfigs);
+    public ProducerFactory<UUID, BlackHoleData> blackHoleProducerFactory(){
+        return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean
-    public KafkaTemplate<UUID, BlackHoleData> blackHoleKafkaTemplate(
-            ProducerFactory<UUID, BlackHoleData> blackHoleProducerFactory
-    ){
-        return new KafkaTemplate<>(blackHoleProducerFactory);
+    public KafkaTemplate<UUID, BlackHoleData> blackHoleKafkaTemplate(){
+        return new KafkaTemplate<>(blackHoleProducerFactory());
     }
 }
