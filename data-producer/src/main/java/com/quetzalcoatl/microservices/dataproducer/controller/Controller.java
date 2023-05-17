@@ -1,5 +1,6 @@
-package com.quetzalcoatl.microservices.dataproducer;
+package com.quetzalcoatl.microservices.dataproducer.controller;
 
+import com.quetzalcoatl.microservices.dataproducer.ProducerService;
 import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleDataDTO;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
