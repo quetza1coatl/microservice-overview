@@ -1,6 +1,6 @@
 package com.quetzalcoatl.microservices.dataproducer.kafka;
 
-import com.quetzalcoatl.microservices.dataproducer.BlackHoleData;
+import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleData;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.UUIDSerializer;
 import org.springframework.beans.factory.annotation.Value;

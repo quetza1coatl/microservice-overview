@@ -1,5 +1,6 @@
 package com.quetzalcoatl.microservices.dataproducer;
 
+import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleDataDTO;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,6 @@ public class Controller {
     @PostMapping(value = "/postData", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addData(@Valid @RequestBody BlackHoleDataDTO dto, BindingResult bindingResult){
         System.out.println(dto);
-
     }
 
 }
