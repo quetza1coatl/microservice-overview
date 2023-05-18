@@ -7,16 +7,23 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import javax.servlet.http.HttpServletRequest;
 import java.lang.invoke.MethodHandles;
 
 
 @RestControllerAdvice
 public class ExceptionHandlerController {
-    public static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+    private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public void handleConversionProblem(HttpMessageNotReadableException error){
-        logger.error(String.format("Cause: [%s]. Details:[%s]", error.getClass().getSimpleName(), error.getCause().getLocalizedMessage()));
+    public void handleConversionProblem(HttpServletRequest request, HttpMessageNotReadableException error){
+        String sensorIdHeader = request.getHeader(Controller.SENSOR_ID_HEADER);
+        String sensorId = sensorIdHeader == null? "N/A" : sensorIdHeader;
+         logger.error(String.format(
+                "Message from sensor [%s] can't be read. Cause: [%s]. Details:[%s]",
+                sensorId, error.getClass().getSimpleName(), error.getCause().getLocalizedMessage()
+                ));
     }
 }
