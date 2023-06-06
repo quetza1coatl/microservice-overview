@@ -34,9 +34,9 @@ public class Controller {
                     sensorId, dto.getSensorId().name());
             return;
         }
-        logger.info(dto.toString());
+        logger.info("DTO received: {}",dto);
         BlackHoleData blackHoleData = BlackHoleDataMapper.convertFromDto(dto);
-        logger.info(blackHoleData.toString());
+        logger.info("DTO converted to entity: {}", blackHoleData);
         producerService.publishData(blackHoleData);
     }
 
