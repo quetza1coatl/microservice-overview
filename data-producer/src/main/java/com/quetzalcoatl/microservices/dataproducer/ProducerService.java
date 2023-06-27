@@ -17,7 +17,7 @@ import java.util.UUID;
 public class ProducerService {
     public static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    @Value("${custom.kafka.main-topic.name}")
+    @Value("${TOPIC_BH_SENSORS_EVENT_NAME}")
     private String topicName;
     private final KafkaTemplate<UUID, BlackHoleData> blackHoleKafkaTemplate;
 
