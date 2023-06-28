@@ -16,7 +16,8 @@ services:
     environment:
       SPRING_KAFKA_CONSUMER_BOOTSTRAP-SERVERS: kafka:9092
       SPRING_KAFKA_PRODUCER_BOOTSTRAP-SERVERS: kafka:9092
-      TOPIC_BH_SENSORS_EVENT_NAME: ${TOPIC_BH_SENSORS_EVENT_NAME}
+    env_file:
+      - ./.env
 
   zookeeper:
     image: wurstmeister/zookeeper

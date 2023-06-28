@@ -7,16 +7,14 @@ import com.quetzalcoatl.microservices.dataproducer.util.BlackHoleDataMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.lang.invoke.MethodHandles;
 import java.util.Objects;
 
 @RestController
+@RequestMapping("/aggregator")
 public class Controller {
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     final static String SENSOR_ID_HEADER = "Sensor-Id";
