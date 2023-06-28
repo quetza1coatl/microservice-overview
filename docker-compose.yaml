@@ -14,7 +14,6 @@ services:
       - zookeeper
       - kafka
     environment:
-      SPRING_KAFKA_CONSUMER_BOOTSTRAP-SERVERS: kafka:9092
       SPRING_KAFKA_PRODUCER_BOOTSTRAP-SERVERS: kafka:9092
     env_file:
       - ./.env
