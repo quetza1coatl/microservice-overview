@@ -17,13 +17,8 @@ public class KafkaConsumerConfig {
     @Value("${SPRING_KAFKA_CONSUMER_BOOTSTRAP-SERVERS}")
     private String bootstrapAddress;
 
-    @Value("${TOPIC_BH_SENSORS_EVENT_NAME}")
-    private String blackHoleDataTopic;
-    @Value("${TOPIC_BH_SENSORS_EVENT_PARTITIONS}")
-    private Integer blackHoleDataPartitions;
-
     @Bean
-    public Map<String, Object> viewerConsumerConfigs(){
+    public Map<String, Object> generalConsumerConfigs(){
         Map<String, Object> config = new HashMap<>();
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
         config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, UUIDSerializer.class);
@@ -31,20 +26,5 @@ public class KafkaConsumerConfig {
         config.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         return config;
-    }
-
-    @Bean
-    public KafkaConsumer<UUID, BlackHoleData> kafkaConsumerBlackHoleData(Map<String, Object> viewerConsumerConfigs){
-        return new KafkaConsumer<>(viewerConsumerConfigs);
-    }
-
-    @Bean
-    public List<TopicPartition> BlackHoleDataPartitions(){
-        List<TopicPartition> partitions = new ArrayList<>();
-        for (int i = 0; i < blackHoleDataPartitions; i++){
-            TopicPartition partition = new TopicPartition(blackHoleDataTopic, i);
-            partitions.add(partition);
-        }
-        return partitions;
     }
 }
