@@ -1,6 +1,6 @@
 package com.quetzalcoatl.microservices.topicviewer.kafka.consumerFactory;
 
-import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleData;
+import com.quetzalcoatl.microservices.topicviewer.deserializationmodels.BlackHoleData;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
 import org.springframework.beans.factory.annotation.Autowired;
