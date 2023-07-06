@@ -1,9 +1,6 @@
 package com.quetzalcoatl.microservices.topicviewer.kafka;
 
-import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleData;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.UUIDSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +11,7 @@ import java.util.*;
 
 @Configuration
 public class KafkaConsumerConfig {
-    @Value("${SPRING_KAFKA_CONSUMER_BOOTSTRAP-SERVERS}")
+    @Value("${SPRING_KAFKA_BOOTSTRAP-SERVERS}")
     private String bootstrapAddress;
 
     @Bean

@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @Configuration
 public class KafkaProducerConfig {
-    @Value("${SPRING_KAFKA_PRODUCER_BOOTSTRAP-SERVERS}")
+    @Value("${SPRING_KAFKA_BOOTSTRAP-SERVERS}")
     private String bootstrapAddress;
 
     @Bean
