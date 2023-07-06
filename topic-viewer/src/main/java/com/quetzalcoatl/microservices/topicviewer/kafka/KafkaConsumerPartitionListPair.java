@@ -12,6 +12,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class KafkaConsumerPartitionListPair {
-    private KafkaConsumer factory;
+    private KafkaConsumer consumer;
     private List<TopicPartition> partitionList;
 }
