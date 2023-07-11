@@ -3,20 +3,21 @@ package com.quetzalcoatl.microservices.topicviewer.kafka.consumerFactory;
 import com.quetzalcoatl.microservices.topicviewer.deserializationmodels.BlackHoleData;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.kafka.common.serialization.UUIDDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Component
 public class BlackHoleDataKafkaConsumer implements KafkaConsumerFactory{
 
     @Autowired
-    private Map<String, Object> generalConsumerConfigs;
+    @Qualifier("generalConsumerConfigs")
+    private Properties generalConsumerConfigs;
     @Value("${TOPIC_BH_SENSORS_EVENT_NAME}")
     private String blackHoleDataTopic;
     @Value("${TOPIC_BH_SENSORS_EVENT_PARTITIONS}")
