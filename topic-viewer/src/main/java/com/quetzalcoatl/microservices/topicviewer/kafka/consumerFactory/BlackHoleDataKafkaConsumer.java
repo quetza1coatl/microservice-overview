@@ -1,13 +1,10 @@
 package com.quetzalcoatl.microservices.topicviewer.kafka.consumerFactory;
 
-import com.quetzalcoatl.microservices.topicviewer.deserializationmodels.BlackHoleData;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
-import org.apache.kafka.common.serialization.UUIDDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
