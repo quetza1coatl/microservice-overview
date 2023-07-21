@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "BlackHoleData",
+  "namespace": "com.quetzalcoatl.microservices.avro",
+  "fields": [
+    { "name": "dataId", "type": "string" },
+    { "name": "sensorId", "type": {
+      "type": "enum",
+      "name": "SensorId",
+      "symbols": ["a3B7kL1p5R", "C6hN9sW4v8", "f2J4nH7m0T", "G5yP9qR2k6", "m8D3xZ6v1C", "P1bN9gA3e6"]
+    }},
+    { "name": "accretionRate", "type": "float" },
+    { "name": "xRayEmission", "type": "int" },
+    { "name": "gravitationalWavesDensity", "type": "float" },
+    { "name": "eventHorizonStability", "type": "int" }
+  ]
+}

@@ -1,6 +1,6 @@
 package com.quetzalcoatl.microservices.dataproducer.util;
 
-import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleData;
+import com.quetzalcoatl.microservices.avro.BlackHoleData;
 import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleDataDTO;
 
 import java.util.UUID;
@@ -11,7 +11,7 @@ public final class BlackHoleDataMapper {
     }
     public static BlackHoleData convertFromDto(BlackHoleDataDTO dto){
         BlackHoleData data = new BlackHoleData();
-        data.setDataId(UUID.randomUUID());
+        data.setDataId(UUID.randomUUID().toString());
         data.setSensorId(dto.getSensorId());
         data.setAccretionRate(dto.getAccretionRate());
         data.setXRayEmission(dto.getEmission());

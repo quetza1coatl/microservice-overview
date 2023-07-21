@@ -1,6 +1,6 @@
 package com.quetzalcoatl.microservices.dataproducer;
 
-import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleData;
+import com.quetzalcoatl.microservices.avro.BlackHoleData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +27,7 @@ public class ProducerService {
 
     public void publishData(BlackHoleData data){
         ListenableFuture<SendResult<UUID, BlackHoleData>> futureResult = blackHoleKafkaTemplate.send(
-                topicName, data.getDataId(), data
+                topicName, UUID.fromString(data.getDataId()), data
         );
         futureResult.addCallback(new ListenableFutureCallback<SendResult<UUID, BlackHoleData>>() {
             @Override
