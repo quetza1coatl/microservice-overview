@@ -1,6 +1,6 @@
 target/
 .mvn
-*/com/quetzalcoatl/microservices/avro/*
+com/quetzalcoatl/microservices/avro/
 
 ### IntelliJ IDEA ###
 .idea
