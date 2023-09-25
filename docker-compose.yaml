@@ -16,21 +16,21 @@ services:
     env_file:
       - ./.env
 
-#  topic-viewer-service:
-#    image: topic-viewer
-#    mem_limit: 700m
-#    ports:
-#      - "8002:8002"
-#    networks:
-#      - black-hole-network
-#    build:
-#      context: ./topic-viewer
-#      dockerfile: Dockerfile
-#    depends_on:
-#      - zookeeper
-#      - kafka
-#    env_file:
-#      - ./.env
+  topic-viewer-service:
+    image: topic-viewer
+    mem_limit: 700m
+    ports:
+      - "8002:8002"
+    networks:
+      - black-hole-network
+    build:
+      context: ./topic-viewer
+      dockerfile: Dockerfile
+    depends_on:
+      - zookeeper
+      - kafka
+    env_file:
+      - ./.env
 
   zookeeper:
     image: wurstmeister/zookeeper
