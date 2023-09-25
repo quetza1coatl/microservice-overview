@@ -1,6 +1,6 @@
 package com.quetzalcoatl.microservices.dataproducer.model;
 
-import com.quetzalcoatl.microservices.avro.SensorId;
+import com.quetzalcoatl.microservices.dataproducer.avro.SensorId;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;

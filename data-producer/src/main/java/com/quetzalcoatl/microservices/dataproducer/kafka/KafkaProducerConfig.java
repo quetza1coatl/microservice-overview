@@ -1,6 +1,6 @@
 package com.quetzalcoatl.microservices.dataproducer.kafka;
 
-import com.quetzalcoatl.microservices.avro.BlackHoleData;
+import com.quetzalcoatl.microservices.dataproducer.avro.BlackHoleData;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.UUIDSerializer;
