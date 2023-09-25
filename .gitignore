@@ -1,7 +1,7 @@
 target/
 .mvn
 com/quetzalcoatl/microservices/topicviewer/avro/
-com/quetzalcoatl/microservices/dataproducer/avro/
+com/quetzalcoatl/microservices/avro/
 
 ### IntelliJ IDEA ###
 .idea

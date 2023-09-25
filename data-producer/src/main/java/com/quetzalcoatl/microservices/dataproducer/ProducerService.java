@@ -1,6 +1,6 @@
 package com.quetzalcoatl.microservices.dataproducer;
 
-import com.quetzalcoatl.microservices.dataproducer.avro.BlackHoleData;
+import com.quetzalcoatl.microservices.avro.BlackHoleData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

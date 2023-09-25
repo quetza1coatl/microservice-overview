@@ -1,7 +1,7 @@
 package com.quetzalcoatl.microservices.dataproducer.controller;
 
 import com.quetzalcoatl.microservices.dataproducer.ProducerService;
-import com.quetzalcoatl.microservices.dataproducer.avro.BlackHoleData;
+import com.quetzalcoatl.microservices.avro.BlackHoleData;
 import com.quetzalcoatl.microservices.dataproducer.model.BlackHoleDataDTO;
 import com.quetzalcoatl.microservices.dataproducer.util.BlackHoleDataMapper;
 import org.slf4j.Logger;
