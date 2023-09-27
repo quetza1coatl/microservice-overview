@@ -50,7 +50,7 @@ public class TopicViewerService {
             ConsumerRecords records = consumer.poll(Duration.ofMillis(POLL_DURATION));
             for (Object objRecord : records){
                 ConsumerRecord record = (ConsumerRecord) objRecord;
-                result.add(new MessageDTO<>(record.key(),record.value(), record.topic(), record.partition(), record.offset()));
+                result.add(new MessageDTO(record.key().toString(), record.value().toString(), record.topic(), record.partition(), record.offset()));
             }
 
         }catch(Exception ex){

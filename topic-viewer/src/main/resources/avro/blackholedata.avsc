@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "BlackHoleData",
-  "namespace": "com.quetzalcoatl.microservices.topicviewer.avro",
+  "namespace": "com.quetzalcoatl.microservices.avro",
   "fields": [
     { "name": "dataId", "type": "string" },
     { "name": "sensorId", "type": {
